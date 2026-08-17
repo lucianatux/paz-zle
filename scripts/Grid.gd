@@ -59,3 +59,6 @@ func load_level_data(data: LevelData) -> void:
 		occupants[npc.position] = CellData.for_npc(npc.id, npc.mood)
 	for obj: ObjectSpawnData in data.objects:
 		occupants[obj.position] = CellData.for_object(obj.object_type)
+		
+func get_entity_at(pos: Vector2i) -> CellData:
+	return occupants.get(pos)
