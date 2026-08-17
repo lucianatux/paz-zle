@@ -1,4 +1,3 @@
-# NpcSpawnData.gd
 class_name NpcSpawnData
 extends Resource
 

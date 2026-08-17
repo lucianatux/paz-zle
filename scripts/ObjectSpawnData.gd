@@ -1,4 +1,3 @@
-# ObjectSpawnData.gd
 class_name ObjectSpawnData
 extends Resource
 

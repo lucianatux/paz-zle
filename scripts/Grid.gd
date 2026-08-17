@@ -33,6 +33,9 @@ func is_walkable(pos: Vector2i) -> bool:
 				return not CellData.is_conflictive_mood(cell.mood)
 	return true
 
+func get_entity_at(pos: Vector2i) -> CellData:
+	return occupants.get(pos)
+
 func move_entity(from: Vector2i, to: Vector2i) -> bool:
 	if not occupants.has(from):
 		return false
@@ -59,6 +62,3 @@ func load_level_data(data: LevelData) -> void:
 		occupants[npc.position] = CellData.for_npc(npc.id, npc.mood)
 	for obj: ObjectSpawnData in data.objects:
 		occupants[obj.position] = CellData.for_object(obj.object_type)
-		
-func get_entity_at(pos: Vector2i) -> CellData:
-	return occupants.get(pos)

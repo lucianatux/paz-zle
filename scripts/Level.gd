@@ -13,7 +13,6 @@ func _ready() -> void:
 	player_controller.moved.connect(_on_player_moved)
 	player_view.place_at(level_data.player_start)
 	board_renderer.render(grid)
-	
 
 func _on_player_moved() -> void:
 	player_controller.input_locked = true

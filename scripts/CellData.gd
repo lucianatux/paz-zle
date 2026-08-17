@@ -1,4 +1,3 @@
-# CellData.gd
 class_name CellData
 extends RefCounted
 

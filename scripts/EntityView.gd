@@ -1,4 +1,3 @@
-# EntityView.gd
 class_name EntityView
 extends Node2D
 
