@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dawr70e2s5xt2"]
+
+[ext_resource type="Script" uid="uid://da70sk7wiiggu" path="res://scripts/Level.gd" id="1_w7c3h"]
+[ext_resource type="Resource" uid="uid://b3ohf2p0wub0e" path="res://data/test_level.tres" id="2_mx8sn"]
+[ext_resource type="Script" uid="uid://c5bpi20or4jk2" path="res://scripts/Grid.gd" id="2_w8frs"]
+
+[node name="Level" type="Node2D" unique_id=1432127724]
+script = ExtResource("1_w7c3h")
+level_data = ExtResource("2_mx8sn")
+
+[node name="Grid" type="Node" parent="." unique_id=1658695038]
+script = ExtResource("2_w8frs")

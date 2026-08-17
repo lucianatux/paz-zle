@@ -47,3 +47,15 @@ func push(object_pos: Vector2i, direction: Vector2i) -> bool:
 		return false
 	move_entity(object_pos, beyond)
 	return true
+
+func load_level_data(data: LevelData) -> void:
+	walls.clear()
+	for wall_pos in data.walls:
+		walls[wall_pos] = true
+	exit_position = data.exit_position
+	occupants.clear()
+	occupants[data.player_start] = CellData.new(CellData.Type.JUGADOR)
+	for npc in data.npcs:
+		occupants[npc.position] = CellData.new(CellData.Type.NPC, npc.id, npc.mood)
+	for obj in data.objects:
+		occupants[obj.position] = CellData.new(CellData.Type.OBJETO, obj.id)
