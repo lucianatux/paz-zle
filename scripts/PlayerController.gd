@@ -1,7 +1,7 @@
 class_name PlayerController
 extends Node
 
-signal moved
+signal moved(pushed_object: CellData, object_to: Vector2i)
 
 var grid: Grid
 var grid_position: Vector2i
@@ -34,11 +34,12 @@ func _try_move(direction: Vector2i) -> void:
 	if grid.is_walkable(target):
 		grid.move_entity(grid_position, target)
 		grid_position = target
-		moved.emit()
+		moved.emit(null, Vector2i.ZERO)
 		return
 	var entity: CellData = grid.get_entity_at(target)
 	if entity != null and entity.type == CellData.Type.OBJECT:
+		var object_to := target + direction
 		if grid.push(target, direction):
 			grid.move_entity(grid_position, target)
 			grid_position = target
-			moved.emit()
+			moved.emit(entity, object_to)

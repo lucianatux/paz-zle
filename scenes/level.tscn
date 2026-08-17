@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://curyvu13jirvf" path="res://assets/sprites/flower.png" id="7_olg7q"]
 [ext_resource type="Texture2D" uid="uid://dshpa6nnel7gw" path="res://assets/sprites/wall_1.png" id="8_t1rx8"]
 [ext_resource type="Script" uid="uid://c2vst2tjlqtdy" path="res://scripts/PlayerController.gd" id="9_8c41q"]
+[ext_resource type="Script" uid="uid://ffsleephy1jp" path="res://scripts/ObjectViewManager.gd" id="9_olg7q"]
 [ext_resource type="PackedScene" uid="uid://blnwtaedh8rdv" path="res://scenes/player_view.tscn" id="10_olg7q"]
 
 [node name="Level" type="Node2D" unique_id=1432127724]
@@ -20,7 +21,6 @@ script = ExtResource("2_w8frs")
 [node name="BoardRenderer" type="Node2D" parent="." unique_id=636044422]
 script = ExtResource("4_mx8sn")
 exit_texture = ExtResource("6_8c41q")
-flower_texture = ExtResource("7_olg7q")
 wall_texture = ExtResource("8_t1rx8")
 
 [node name="PlayerController" type="Node" parent="." unique_id=1103669662]
@@ -34,3 +34,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 2048
 limit_bottom = 1152
+
+[node name="ObjectViewManager" type="Node2D" parent="." unique_id=1590315318]
+script = ExtResource("9_olg7q")
+flower_texture = ExtResource("7_olg7q")

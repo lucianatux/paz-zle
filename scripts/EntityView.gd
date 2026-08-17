@@ -7,7 +7,7 @@ const MOVE_DURATION := 0.1
 func place_at(grid_pos: Vector2i) -> void:
 	position = _grid_to_pixel(grid_pos)
 
-func move_to(grid_pos: Vector2i) -> void:
+func move_to(grid_pos: Vector2i):
 	var target := _grid_to_pixel(grid_pos)
 	var tween := create_tween()
 	tween.tween_property(self, "position", target, MOVE_DURATION).set_trans(Tween.TRANS_SINE)
