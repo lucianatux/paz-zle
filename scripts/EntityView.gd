@@ -2,7 +2,7 @@ class_name EntityView
 extends Node2D
 
 const CELL_SIZE := 128
-const MOVE_DURATION := 0.1
+const MOVE_DURATION := 0.18
 
 func place_at(grid_pos: Vector2i) -> void:
 	position = _grid_to_pixel(grid_pos)

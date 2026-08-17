@@ -11,8 +11,7 @@ metadata/_custom_type_script = "uid://df4w144vm3sik"
 
 [resource]
 script = ExtResource("3_72e3a")
-walls = Array[Vector2i]([Vector2i(3, 1)])
-exit_position = Vector2i(5, 1)
-player_start = Vector2i(1, 1)
+walls = Array[Vector2i]([Vector2i(6, 1)])
+exit_position = Vector2i(15, 1)
 objects = Array[ExtResource("2_cjrmn")]([SubResource("Resource_vwoei")])
 metadata/_custom_type_script = "uid://d5flido3quy2"
