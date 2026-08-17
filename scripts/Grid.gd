@@ -25,14 +25,14 @@ func is_walkable(pos: Vector2i) -> bool:
 	if occupants.has(pos):
 		var cell: CellData = occupants[pos]
 		match cell.type:
-			CellData.Type.OBJETO:
+			CellData.Type.OBJECT:
 				return false
-			CellData.Type.JUGADOR:
+			CellData.Type.PLAYER:
 				return false
 			CellData.Type.NPC:
 				return not CellData.is_conflictive_mood(cell.mood)
 	return true
-	
+
 func move_entity(from: Vector2i, to: Vector2i) -> bool:
 	if not occupants.has(from):
 		return false
@@ -54,8 +54,8 @@ func load_level_data(data: LevelData) -> void:
 		walls[wall_pos] = true
 	exit_position = data.exit_position
 	occupants.clear()
-	occupants[data.player_start] = CellData.new(CellData.Type.JUGADOR)
-	for npc in data.npcs:
-		occupants[npc.position] = CellData.new(CellData.Type.NPC, npc.id, npc.mood)
-	for obj in data.objects:
-		occupants[obj.position] = CellData.new(CellData.Type.OBJETO, obj.id)
+	occupants[data.player_start] = CellData.for_player()
+	for npc: NpcSpawnData in data.npcs:
+		occupants[npc.position] = CellData.for_npc(npc.id, npc.mood)
+	for obj: ObjectSpawnData in data.objects:
+		occupants[obj.position] = CellData.for_object(obj.object_type)

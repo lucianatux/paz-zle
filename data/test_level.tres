@@ -4,8 +4,15 @@
 [ext_resource type="Script" uid="uid://df4w144vm3sik" path="res://scripts/ObjectSpawnData.gd" id="2_cjrmn"]
 [ext_resource type="Script" uid="uid://d5flido3quy2" path="res://scripts/LevelData.gd" id="3_72e3a"]
 
+[sub_resource type="Resource" id="Resource_vwoei"]
+script = ExtResource("2_cjrmn")
+position = Vector2i(2, 1)
+metadata/_custom_type_script = "uid://df4w144vm3sik"
+
 [resource]
 script = ExtResource("3_72e3a")
+walls = Array[Vector2i]([Vector2i(3, 1)])
 exit_position = Vector2i(5, 1)
 player_start = Vector2i(1, 1)
+objects = Array[ExtResource("2_cjrmn")]([SubResource("Resource_vwoei")])
 metadata/_custom_type_script = "uid://d5flido3quy2"

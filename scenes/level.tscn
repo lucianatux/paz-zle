@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://da70sk7wiiggu" path="res://scripts/Level.gd" id="1_w7c3h"]
 [ext_resource type="Resource" uid="uid://b3ohf2p0wub0e" path="res://data/test_level.tres" id="2_mx8sn"]
 [ext_resource type="Script" uid="uid://c5bpi20or4jk2" path="res://scripts/Grid.gd" id="2_w8frs"]
+[ext_resource type="Script" uid="uid://c8q5y7npt0os7" path="res://scripts/BoardRenderer.gd" id="4_mx8sn"]
+[ext_resource type="Texture2D" uid="uid://uq5c306vqn08" path="res://assets/sprites/player.png" id="5_b121j"]
+[ext_resource type="Texture2D" uid="uid://ira1dqpodg12" path="res://assets/sprites/exit.png" id="6_8c41q"]
+[ext_resource type="Texture2D" uid="uid://curyvu13jirvf" path="res://assets/sprites/flower.png" id="7_olg7q"]
+[ext_resource type="Texture2D" uid="uid://dshpa6nnel7gw" path="res://assets/sprites/wall_1.png" id="8_t1rx8"]
 
 [node name="Level" type="Node2D" unique_id=1432127724]
 script = ExtResource("1_w7c3h")
@@ -10,3 +15,10 @@ level_data = ExtResource("2_mx8sn")
 
 [node name="Grid" type="Node" parent="." unique_id=1658695038]
 script = ExtResource("2_w8frs")
+
+[node name="BoardRenderer" type="Node2D" parent="." unique_id=636044422]
+script = ExtResource("4_mx8sn")
+player_texture = ExtResource("5_b121j")
+exit_texture = ExtResource("6_8c41q")
+flower_texture = ExtResource("7_olg7q")
+wall_texture = ExtResource("8_t1rx8")
