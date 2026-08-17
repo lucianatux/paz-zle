@@ -27,3 +27,10 @@ wall_texture = ExtResource("8_t1rx8")
 script = ExtResource("9_8c41q")
 
 [node name="PlayerView" parent="." unique_id=1422788115 instance=ExtResource("10_olg7q")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1008047224]
+position = Vector2(1024, 576)
+limit_left = 0
+limit_top = 0
+limit_right = 2048
+limit_bottom = 1152
