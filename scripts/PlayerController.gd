@@ -5,12 +5,15 @@ signal moved
 
 var grid: Grid
 var grid_position: Vector2i
+var input_locked: bool = false
 
 func setup(p_grid: Grid, start_position: Vector2i) -> void:
 	grid = p_grid
 	grid_position = start_position
 
 func _unhandled_input(event: InputEvent) -> void:
+	if input_locked:
+		return
 	if not event is InputEventKey or not event.pressed or event.echo:
 		return
 	var direction := Vector2i.ZERO

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://blnwtaedh8rdv"]
+
+[ext_resource type="Script" path="res://scripts/EntityView.gd" id="1_4sw4g"]
+[ext_resource type="Texture2D" uid="uid://uq5c306vqn08" path="res://assets/sprites/player.png" id="2_gvpp2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gvpp2")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="PlayerView" type="Node2D" unique_id=1422788115]
+script = ExtResource("1_4sw4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1287884094]
+sprite_frames = SubResource("SpriteFrames_u0ya7")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6387122

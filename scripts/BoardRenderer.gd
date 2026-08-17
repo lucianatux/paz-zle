@@ -1,10 +1,8 @@
-# BoardRenderer.gd
 class_name BoardRenderer
 extends Node2D
 
 const CELL_SIZE := 128
 
-@export var player_texture: Texture2D
 @export var exit_texture: Texture2D
 @export var flower_texture: Texture2D
 @export var wall_texture: Texture2D
@@ -21,12 +19,10 @@ func render(grid: Grid) -> void:
 	for pos in grid.occupants:
 		var cell: CellData = grid.occupants[pos]
 		match cell.type:
-			CellData.Type.PLAYER:
-				_draw_cell(pos, player_texture)
 			CellData.Type.OBJECT:
 				_draw_cell(pos, _get_object_texture(cell.object_type))
-			CellData.Type.NPC:
-				pass # next block, Character Manager
+			CellData.Type.NPC, CellData.Type.PLAYER:
+				pass # jugador: PlayerView. NPC: próximo bloque (Character Manager)
 
 func _get_object_texture(object_type: CellData.ObjectType) -> Texture2D:
 	match object_type:
