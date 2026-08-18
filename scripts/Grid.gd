@@ -54,11 +54,20 @@ func push(object_pos: Vector2i, direction: Vector2i) -> bool:
 func load_level_data(data: LevelData) -> void:
 	walls.clear()
 	for wall_pos in data.walls:
+		_warn_if_invalid(wall_pos, "wall")
 		walls[wall_pos] = true
+	_warn_if_invalid(data.exit_position, "exit_position")
 	exit_position = data.exit_position
 	occupants.clear()
+	_warn_if_invalid(data.player_start, "player_start")
 	occupants[data.player_start] = CellData.for_player()
 	for npc: NpcSpawnData in data.npcs:
+		_warn_if_invalid(npc.position, "npc (%s)" % npc.id)
 		occupants[npc.position] = CellData.for_npc(npc.id, npc.mood)
 	for obj: ObjectSpawnData in data.objects:
+		_warn_if_invalid(obj.position, "object (%s)" % CellData.ObjectType.keys()[obj.object_type])
 		occupants[obj.position] = CellData.for_object(obj.object_type)
+
+func _warn_if_invalid(pos: Vector2i, label: String) -> void:
+	if not is_valid_position(pos):
+		push_warning("LevelData: %s en posición fuera de rango %s (válido: X 0-%d, Y 0-%d)" % [label, pos, BOARD_WIDTH - 1, BOARD_HEIGHT - 1])
